@@ -3,7 +3,7 @@ fn main() {
     let stdin = std::io::stdin();
     let mut handle = stdin.lock();
 
-    let mut fuel: i64 = 0;
+    let mut fuel = 0;
 
     loop {
         let mut buf = String::new();
@@ -20,7 +20,6 @@ fn main() {
 }
 
 fn calculate_fuel_required(mass:i64) -> i64 {
-    println!("mass:{}", mass);
     mass / 3 - 2
 }
 
@@ -29,7 +28,7 @@ fn calculate_fuel_required_including_fuel(mass: i64) -> i64 {
 
     let mut total_fuel = basic_fuel;
 
-    let mut additional_fuel:i64 = basic_fuel;
+    let mut additional_fuel = basic_fuel;
     loop {
         additional_fuel = calculate_fuel_required(additional_fuel);
 
